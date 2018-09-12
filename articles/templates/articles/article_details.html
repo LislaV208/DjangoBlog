@@ -3,10 +3,12 @@
 {% block content %}
     <div class="article-detail">
         <div class="article">
+            {% if article.thumb %}
             <img src="{{ article.thumb.url }}" />
+            {% endif %}
             <h2>{{ article.title }}</h2>
             <p>{{ article.body }}</p>
-            <p>{{ article.date }}</p>
+            <p class="article-date">{{ article.date }}</p>
         </div>
     </div>
 {% endblock %}

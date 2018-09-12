@@ -19,12 +19,13 @@ a, a:hover, a:visited {
 
 .wrapper {
     max-width: 960px;
-    margin: 0 auto;
+    margin: 0px auto 80px auto;
+    /* margin: 0 auto; */
 }
 
 div.wrapper h1 {
     text-align: center;
-    margin: 100px auto;
+    margin: 70px auto;
     font-size: 2.4em;
 }
 
@@ -35,7 +36,14 @@ header {
 }
 
 nav {
+    position: relative;
     justify-self: end;
+}
+
+nav small {
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 nav li {
@@ -64,6 +72,12 @@ nav button {
     padding-bottom: 40px;
 }
 
+.article .article-date {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+}
+
 .article h2 {
     font-size: 1.2em;
 }
@@ -86,8 +100,16 @@ header img {
     max-width: 300px;
 }
 
-.article-detail .article .img {
+.article-detail {
+    margin-top: 50px;
+}
+
+.article-detail .article img {
     max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .article-detail .article h2 {
@@ -108,15 +130,17 @@ header img {
 
 .site-form input, .site-form textarea {
     display: block;
-    margin: 20px 0 0 0;
+    margin: 10px 0 10px 0;
     padding: 10px;
 }
 
 a.highlight {
     border: 1px solid #00966e;
+    background-color: #007a5a;
     padding: 10px;
     border-radius: 4px;
-    color: #00966e;
+    /* color: #00966e; */
+    color: #fff;
 }
 
 .helptext, .helptext ul {

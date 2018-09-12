@@ -18,18 +18,21 @@
             <nav>
                 <ul>
                     {% if user.is_authenticated %}
-                    <li>
-                        <form class="logout-link" action="{% url 'accounts:logout' %}" method="POST">
-                            {% csrf_token %}
-                            <button type="submit">Logout</button>
-                        </form>
-                    </li>
                     <li><a href="{% url 'articles:create' %}" class="highlight">Create article</a></li>
+                    <li>
+                         <form class="logout-link" action="{% url 'accounts:logout' %}" method="POST">
+                             {% csrf_token %}
+                            <button type="submit">Logout</button>
+                         </form>
+                     </li>
                     {% else %}
-                        <li><a href="{% url 'accounts:login' %}">Login</a></li>
-                        <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+                    <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+                    <li><a href="{% url 'accounts:login' %}">Login</a></li>
                     {% endif %}
                 </ul>
+                {% if user.is_authenticated %}
+                    <small>Logged as <i>{{ user.get_username }}</i>.</small>
+                {% endif %}
             </nav>
         </header>
         {% block content %}
